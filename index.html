@@ -154,6 +154,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script>$(".btn.btn-info").click(function(){ 
+			var a = $(this).attr("value");
+			console.log(a)
+			dataLayer.push({"event":"button_click", "fieldname":"submit"});                
+		});
+	</script>
 </body>
 </body>
 
