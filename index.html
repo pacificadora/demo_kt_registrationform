@@ -159,6 +159,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			console.log(a)
 			dataLayer.push({"event":"button_click", "fieldname":"submit"});                
 		});
+		
+		// email form error
+		$(".btn.btn-info").click(function(){ 
+			var a = $('#error_em').is(":visible");
+            if (a == true){
+            console.log(a)
+		   dataLayer.push({"event":"email_error"});}
+		});
 	</script>
 </body>
 </body>
