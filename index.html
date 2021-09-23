@@ -161,9 +161,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		});
 		
 		// email form error
-		$("#error_em").is(":visible", function(){ 
-	dataLayer.push({"event":"email_error"});
-		});
+		//$("#error_em").is(":visible", function(){ 
+	//dataLayer.push({"event":"email_error"});
+	//	});
+		
+		$(".btn.btn-info").click(function(){
+			setTimeout(function () {
+				var a=$(".form-group>div>p").is(":visible")
+				if(a==true){
+					var errortext = $(".form-group>div>p:visible").text();
+					console.log(errortext)
+					dataLayer.push({"event":"formError","error_text":errortext });
+				}
+			},500)
+		})
 	</script>
 </body>
 </body>
