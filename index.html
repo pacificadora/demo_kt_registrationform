@@ -164,8 +164,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		//$("#error_em").is(":visible", function(){ 
 	//dataLayer.push({"event":"email_error"});
 	//	});
-		
-		/*$(".btn.btn-info").click(function(){
+		//catching all the errors
+		$(".btn.btn-info").click(function(){
 			setTimeout(function () {
 				var a=$(".form-group>div>p").is(":visible")
 				if(a==true){
@@ -174,7 +174,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					dataLayer.push({"event":"formError","error_text":errortext });
 				}
 			},500)
-		})*/
+		})
+		
+		//catching the form start
+		$('input[type = text], input[type = password], input[type = radio], input[type=checkbox],input[type=email]').focus(function(){
+			for (var i=0; i<dataLayer.length; i++){
+				if (dataLayer[i].event == 'formStart'){return}
+			}
+			window.dataLayer = window.dataLayer || []
+			dataLayer.push({"event":"formStart"});
+		})
 		
 	</script>
 </body>
